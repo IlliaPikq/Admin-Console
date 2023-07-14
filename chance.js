@@ -27,10 +27,10 @@ class User {
 const arrayOfUsers = [];
 
 for (let i = 0; i < 100; i++) {
-	let uName = chance.name();
-	let uAge = chance.age();
-	let uCompany = chance.company();
-	let user = new User(uName, uAge, uCompany);
+	const uName = chance.name();
+	const uAge = chance.age();
+	const uCompany = chance.company();
+	const user = new User(uName, uAge, uCompany);
 	arrayOfUsers.push(user);
 }
 
