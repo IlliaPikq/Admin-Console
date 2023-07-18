@@ -103,6 +103,7 @@ header {
 }
 
 main {
+	color: var(--primaryClr);
 	display: flex;
 	flex-direction: column;
 	gap: 2em;
