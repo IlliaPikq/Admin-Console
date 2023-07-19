@@ -14,19 +14,9 @@ $borr: 5px;
 }
 
 html.dark-mode {
-	--primaryClr: red;
-}
-
-html.light-mode {
-	--primaryClr: blue;
-}
-
-html {
-	color-scheme: light dark;
-	font-family: 'Lato', sans-serif;
-	font-size: 18px;
-	height: 100vh;
-	background-image: radial-gradient(
+	--primaryClr: #121212;
+	--secondaryClr: #fff;
+	--radialGradient: radial-gradient(
 		circle,
 		#121212,
 		#131414,
@@ -34,6 +24,18 @@ html {
 		#131414,
 		#121212
 	);
+}
+
+html.light-mode {
+	--primaryClr: #fff;
+}
+
+html {
+	color-scheme: light dark;
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	height: 100vh;
+	background-image: var(--radialGradient);
 	background-repeat: no-repeat;
 }
 
