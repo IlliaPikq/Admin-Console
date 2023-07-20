@@ -15,6 +15,7 @@ $borr: 5px;
 
 html.dark-mode {
 	--primaryClr: #121212;
+	--primaryClrLite: hsl(0, 0%, 7%, 0.6);
 	--secondaryClr: #fff;
 	--radialGradient: radial-gradient(
 		circle,
@@ -27,7 +28,17 @@ html.dark-mode {
 }
 
 html.light-mode {
-	--primaryClr: #fff;
+	--primaryClr: #dfedec;
+	--primaryClrLite: hsl(176, 28%, 90%, 0.6);
+	--secondaryClr: #121212;
+	--radialGradient: radial-gradient(
+		circle,
+		#dfedec,
+		#a2b5ba,
+		#6c7f8b,
+		#a2b5ba,
+		#1e1c30
+	);
 }
 
 html {
@@ -35,9 +46,12 @@ html {
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
 	height: 100vh;
+	background-color: var(--primaryClr);
 	background-image: var(--radialGradient);
 	background-repeat: no-repeat;
 }
+
+$primaryColor: var(--primaryClr);
 
 header {
 	display: flex;
@@ -45,7 +59,7 @@ header {
 	left: 0;
 	top: 0;
 	width: 100%;
-	background-color: rgb(14, 13, 13, 0.4);
+	background-color: rgb(14, 13, 13, 0.3);
 	justify-content: flex-end;
 	padding: $sgap 2em;
 	gap: 1.5em;
@@ -68,11 +82,10 @@ header {
 
 	/* The slider */
 	.slider {
-		--background: #28096b;
 		position: absolute;
 		cursor: pointer;
 		inset: 0;
-		background-color: var(--background);
+		background-color: var(--secondaryClr);
 		transition: 0.5s;
 		border-radius: 30px;
 	}
@@ -86,26 +99,27 @@ header {
 		left: 10%;
 		bottom: 15%;
 		box-shadow: inset 8px -4px 0px 0px #fff000;
-		background: var(--background);
+		background-color: var(--secondaryClr);
+
 		transition: 0.5s;
 	}
 
 	input:checked + .slider {
-		background-color: #522ba7;
+		background-color: var(--secondaryClr);
 	}
 
 	input:checked + .slider:before {
 		transform: translateX(100%);
-		box-shadow: inset 15px -4px 0px 15px #fff000;
+		box-shadow: inset 15px -4px 0px 15px #000000;
 	}
 
 	.profile_icon {
 		font-size: 2em;
+		color: var(--secondaryClr);
 	}
 }
 
 main {
-	color: var(--primaryClr);
 	display: flex;
 	flex-direction: column;
 	gap: 2em;
@@ -117,6 +131,7 @@ main {
 	align-items: center;
 	min-height: 60vh;
 	justify-content: center;
+	color: var(--secondaryClr);
 }
 
 .hero_title {
@@ -131,10 +146,11 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: $sgap;
+	color: var(--secondaryClr);
 }
 
 .searchBar {
-	background-color: #404148;
+	background-color: var(--primaryClr);
 	outline: none;
 	border: none;
 	width: 100%;
@@ -152,6 +168,7 @@ main {
 
 .searchbar_wrapper:before {
 	content: '\f002';
+	color: inherit;
 	font-family: 'Font Awesome 6 Free';
 	position: absolute;
 	top: 50%;
@@ -164,7 +181,7 @@ main {
 .filterBtn {
 	outline: none;
 	border: none;
-	background-color: #404148;
+	background-color: var(--primaryClr);
 	align-self: flex-end;
 	border-radius: $borr;
 	padding: $sgap;
@@ -179,5 +196,6 @@ main {
 	justify-content: space-between;
 	border-radius: borr;
 	padding: 2em 3em;
-	background-color: #252729;
+	color: var(--secondaryClr);
+	background-color: var(--primaryClrLite);
 }
