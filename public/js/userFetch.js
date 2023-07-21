@@ -1,4 +1,4 @@
-const url = '../../data/userDB.json';
+const url = '../data/userDB.json';
 
 const user_section = document.querySelector('.user_section');
 function fetchUsers(url, header = {}) {
