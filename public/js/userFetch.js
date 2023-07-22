@@ -1,4 +1,4 @@
-const url = '../../data/userDB.json';
+const url = '../data/userDB.json';
 
 const user_section = document.querySelector('.user_section');
 function fetchUsers(url, header = {}) {
@@ -14,6 +14,13 @@ function fetchUsers(url, header = {}) {
 					const clon = temp.content.cloneNode(true);
 					const uName = clon.querySelector('.name');
 					uName.textContent = user.name;
+					const uID = clon.querySelector('.user_id');
+					uID.textContent += user.id;
+					const uAge = clon.querySelector('.user_age');
+					uAge.textContent += user.age;
+					const uCompany = clon.querySelector('.user_company');
+					uCompany.textContent += user.company;
+
 					user_section.appendChild(clon);
 				}
 			});

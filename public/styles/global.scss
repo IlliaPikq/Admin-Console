@@ -17,6 +17,7 @@ $borr: 5px;
 html.dark-mode {
 	--primaryClr: #121212;
 	--primaryClrLite: #141414;
+	--primaryClrUltraLite: #333636;
 	--bcgroundClr: #131314;
 	--secondaryClr: #fff;
 	--radialGradient: radial-gradient(
@@ -32,6 +33,7 @@ html.dark-mode {
 html.light-mode {
 	--primaryClr: #dfedec;
 	--primaryClrLite: #dae2e2;
+	--primaryClrUltraLite: #3333;
 	--bcgroundClr: #a2b5ba;
 	--secondaryClr: #121212;
 	--radialGradient: radial-gradient(
@@ -199,6 +201,18 @@ main {
 	padding: 0 2em;
 }
 
+details {
+	width: 100%;
+}
+
+details[open] .details_arrow {
+	rotate: 180deg;
+}
+
+.details_arrow {
+	transition: 0.3s;
+}
+
 .user_block {
 	display: flex;
 	width: 100%;
@@ -207,6 +221,17 @@ main {
 	padding: 2em 3em;
 	color: var(--secondaryClr);
 	background-color: var(--primaryClrLite);
+}
+
+.user_details {
+	background-color: var(--primaryClrUltraLite);
+	padding: 0.5em 1em;
+	color: var(--secondaryClr);
+}
+
+.user_details_list {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
 }
 
 .loadMore {
