@@ -4,3 +4,4 @@ package-lock.json
 .github
 firebase.json
 .firebaserc
+.env
