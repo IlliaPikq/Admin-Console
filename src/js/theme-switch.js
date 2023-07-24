@@ -1,4 +1,3 @@
-console.log('hello from ts');
 const themeSwitch = document.querySelector('.switch input');
 
 themeSwitch.addEventListener('click', () => {

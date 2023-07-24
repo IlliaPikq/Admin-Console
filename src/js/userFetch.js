@@ -1,10 +1,9 @@
-const url = '../data/userDB.json';
+const url = '../../public/data/userDB.json';
 
 const user_section = document.querySelector('.user_section');
 function fetchUsers(url, header = {}) {
 	fetch(url, header)
 		.then((res) => {
-			console.log('count');
 			return res.json();
 		})
 		.then((data) => {
