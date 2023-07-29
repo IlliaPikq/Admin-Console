@@ -33,7 +33,17 @@
             <div class="searchbar_wrapper">
                 <input class="searchBar" type="search" placeholder="Search for users">
             </div>
-            <button class="filterBtn">filter by <i class="fa-solid fa-filter"></i></button>
+            <button class="filterBtn" onclick="document.querySelector('.filter_modal').show()">filter by <i
+                    class="fa-solid fa-filter"></i></button>
+            <dialog class="filter_modal">
+                <form id="filterForm">
+                    <div class="progressBar">
+                        <label for="progressInput" id="progressOutput">Value: </label>
+                        <input type="range" min="0" max="100" value="0" id="progressInput">
+                    </div>
+                    <button formmethod="dialog">Apply</button>
+                </form>
+            </dialog>
         </div>
         <div class="user_section page_container">
             <template>

@@ -1,16 +1,6 @@
 const searchBar = document.querySelector('input.searchBar');
-
-// const [userName, userCountry, userAge, userCompnay, userProffesion] = [
-//     document.querySelectorAll('.name'),
-//     document.querySelector('.user_country'),
-//     document.querySelector('.user_age'),
-//     document.querySelector('.user_company'),
-//     document.querySelector('.user_proffesion'),
-// ];
 searchBar.addEventListener('input', (e) => {
 	const searchValue = e.target.value.toLowerCase();
-	console.log(searchValue);
-
 	const userBlocksList = document.querySelectorAll('.user_block');
 	userBlocksList.forEach((userBlock) => {
 		const parentContainer = userBlock.parentElement;
