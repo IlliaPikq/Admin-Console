@@ -33,7 +33,7 @@ html.dark-mode {
 html.light-mode {
 	--primaryClr: #dfedec;
 	--primaryClrLite: #dae2e2;
-	--primaryClrUltraLite: #3333;
+	--primaryClrUltraLite: #fcecec33;
 	--bcgroundClr: #a2b5ba;
 	--secondaryClr: #121212;
 	--radialGradient: radial-gradient(
@@ -149,6 +149,7 @@ main {
 }
 
 .searchBar_block {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: $sgap;
@@ -187,48 +188,69 @@ main {
 .filterBtn {
 	outline: none;
 	border: none;
-	background-color: var(--primaryClr);
 	align-self: flex-end;
+	background-color: var(--primaryClr);
 	border-radius: $borr;
 	padding: $sgap;
 }
 
+.filter_modal {
+	position: absolute;
+	left: 105%;
+	border: none;
+	padding: 1vw 1.5vw;
+	color: var(--secondaryClr);
+	background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+#filterForm {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.modalBtn {
+	border-color: transparent;
+	padding: 0.5em 1em;
+	background-color: var(--primaryClr);
+}
+
 .progressBar {
-	width: 100%;
+	width: 200px;
 }
 
 #progressInput {
-	-webkit-appearance: none;
-	width: 100%;
-	height: 15px;
-	border-radius: 5px;
-	background: #d3d3d3;
-	outline: none;
-	opacity: 0.7;
-	-webkit-transition: 0.2s;
-	transition: opacity 0.2s;
-}
-
-#progressInput:hover {
-	opacity: 1;
-}
-
-#progressInput::-webkit-slider-thumb {
-	-webkit-appearance: none;
 	appearance: none;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	background: #04aa6d;
-	cursor: pointer;
-}
-
-#progressInput::-moz-range-thumb {
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	background: #04aa6d;
-	cursor: pointer;
+	border: none;
+	padding: 0;
+	width: 100%;
+	height: 10px;
+	&::-webkit-slider-runnable-track {
+		background-color: var(--primaryClr);
+		border-radius: 5px;
+		height: 10px;
+	}
+	&::-webkit-slider-thumb {
+		appearance: none;
+		width: 20px;
+		height: 20px;
+		background-color: var(--primaryClr);
+		border-radius: 50%;
+		margin-top: -5px;
+	}
+	&::-moz-range-track {
+		background-color: var(--primaryClr);
+		border-radius: 20px;
+		height: 10px;
+	}
+	&::-moz-range-thumb {
+		appearance: none;
+		width: 10px;
+		height: 20px;
+		background-color: var(--primaryClr);
+		border-radius: 123%;
+		margin-top: -5px;
+	}
 }
 
 .user_section {

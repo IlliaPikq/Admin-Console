@@ -4,7 +4,7 @@ let currentValue;
 
 progressInput.addEventListener('input', (e) => {
 	currentValue = e.target.value;
-	progressOutput.textContent = 'Value: ' + currentValue;
+	progressOutput.textContent = 'Set min age: ' + currentValue;
 });
 
 const filterForm = document.querySelector('#filterForm');

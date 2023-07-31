@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, onValue, ref } from 'firebase/database';
-dotenv.config();
+
+dotenv.config({ path: process.cwd() + '/.env' });
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
