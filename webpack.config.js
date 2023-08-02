@@ -1,13 +1,9 @@
-import { dirname, resolve as pathResolve } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import path from 'path';
 
 export default {
 	entry: './src/js/global.js',
 	output: {
-		path: pathResolve(__dirname, 'public', 'dist'),
+		path: path.resolve(process.cwd(), 'public', 'dist'),
 		filename: 'bundle.js',
 	},
 	module: {
