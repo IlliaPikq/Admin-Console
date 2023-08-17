@@ -11,8 +11,16 @@ app.use(express.json());
 app.get('/', (req, res) => {
     const filePath = path.join(process.cwd(), 'public', 'userDB.json');
     const jsonFile = fs.readFileSync(filePath);
-    const data = JSON.parse(jsonFile);
-    res.json(data);
+    const {users} = JSON.parse(jsonFile);
+    let start = req.query.start
+    const end = req.query.end
+    if (start && end) {
+        const requestedUsers = []
+        for (; start < end; start++) {
+            requestedUsers.push(users[start]);
+        }
+        res.json(requestedUsers);
+    } else res.json(users)
 });
 
 
