@@ -5,3 +5,4 @@ package-lock.json
 firebase.json
 .firebaserc
 .env
+.vercel

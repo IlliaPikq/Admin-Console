@@ -4,19 +4,19 @@ searchBar.addEventListener('input', (e) => {
 	const userBlocksList = document.querySelectorAll('.user_block');
 	userBlocksList.forEach((userBlock) => {
 		const parentContainer = userBlock.parentElement;
-		const [userName, userCountry, userAge, userCompnay, userProffesion] = [
+		const [uName, uCountry, uAge, uCompnay, uProfession] = [
 			parentContainer.querySelector('.name'),
 			parentContainer.querySelector('.user_country'),
 			parentContainer.querySelector('.user_age'),
 			parentContainer.querySelector('.user_company'),
-			parentContainer.querySelector('.user_proffesion'),
+			parentContainer.querySelector('.user_profession'),
 		];
 		const isVisible =
-			userName.textContent.toLowerCase().includes(searchValue) ||
-			userCountry.textContent.toLowerCase().includes(searchValue) ||
-			userAge.textContent.toLowerCase().includes(searchValue) ||
-			userCompnay.textContent.toLowerCase().includes(searchValue) ||
-			userProffesion.textContent.toLowerCase().includes(searchValue);
+		uName.textContent.toLowerCase().includes(searchValue) ||
+		uCountry.textContent.toLowerCase().includes(searchValue) ||
+		uAge.textContent.toLowerCase().includes(searchValue) ||
+		uCompnay.textContent.toLowerCase().includes(searchValue) ||
+		uProfession.textContent.toLowerCase().includes(searchValue);
 		!isVisible
 			? (userBlock.parentElement.style.display = 'none')
 			: (userBlock.parentElement.style.display = 'block');

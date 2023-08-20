@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-mode">
-
+<html lang="en" class="dark-mode">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./dist/global.css">
     <link rel="shortcut icon" href="app.ico" type="image/x-icon">
-    <script src="firebaseConnection.js" type="module"></script>
+
 </head>
 
 <body>
@@ -29,7 +28,8 @@
             <h1 class="hero_title">Database for users</h1>
             <span class="hero_subtitle">Search for over 100 users!!</span>
         </div>
-        <div class="searchBar_block page_container">
+        <div class="page_container">
+        <div class="searchBar_block">
             <div class="searchbar_wrapper">
                 <input class="searchBar" type="search" placeholder="Search for users">
             </div>
@@ -45,6 +45,7 @@
                 </form>
             </dialog>
         </div>
+    </div>
         <div class="user_section page_container">
             <template>
                 <details>
@@ -57,7 +58,7 @@
                         <ul class="user_details_list">
                             <li class="user_country">Country: </li>
                             <li class="user_age">Age: </li>
-                            <li class="user_proffesion">Proffesion: </li>
+                            <li class="user_profession">Profession: </li>
                             <li class="user_company">Company: </li>
                         </ul>
                     </div>
@@ -65,7 +66,7 @@
             </template>
         </div>
     </main>
-    <script src="./dist/bundle.js" defer></script>
+    <script src="./dist/bundle.js" type="module" defer></script>
 </body>
 
 </html>

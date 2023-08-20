@@ -1,11 +1,12 @@
-const themeSwitch = document.querySelector('.switch input');
+const htmlTag = document.querySelector('html');
 
+(window.matchMedia('(prefers-color-scheme: dark)').matches)
+	? htmlTag.className = 'dark-mode'
+	: htmlTag.className = 'light-mode'
+
+const themeSwitch = document.querySelector('.switch input');
 themeSwitch.addEventListener('click', () => {
-	const htmlTag = document.querySelector('html');
-	if (htmlTag.className == 'light-mode') {
-		htmlTag.className = 'dark-mode';
-	} else {
-		htmlTag.className = 'light-mode';
-	}
-	themeSwitch.classList.toggle('dark-mode', htmlTag.className == 'light-mode');
+	(htmlTag.className == 'light-mode') 
+		? htmlTag.className = 'dark-mode'
+		: htmlTag.className = 'light-mode';
 });
