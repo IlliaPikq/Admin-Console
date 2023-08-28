@@ -34,7 +34,7 @@ class Database {
         const loadBtn = document.querySelector('.loadMore');
         loadBtn.addEventListener('click', (e) => {
             e.target.remove();
-            database.loadUsers();
+            Databse.loadUsers();
         })
     }
 }   
