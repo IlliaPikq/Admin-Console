@@ -1,17 +1,14 @@
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
-const app = express();
-const path = require('path');
+const userData = require('../public/userDB.json')
 
+const app = express()
 app.use(express.json());
 app.use(cors());
 
-  
+
 app.get('/', (req, res) => {
-    const filePath = path.join(process.cwd(), 'public', 'userDB.json');
-    const jsonFile = fs.readFileSync(filePath);
-    const {users} = JSON.parse(jsonFile);
+    const {users} = userData;
     let start = req.query.start
     const end = req.query.end
     if (start && end) {
@@ -23,5 +20,5 @@ app.get('/', (req, res) => {
     } else res.json(users)
 });
 
-
+app.listen(3000)
 module.exports = app;
