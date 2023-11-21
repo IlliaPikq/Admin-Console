@@ -1,9 +1,2 @@
 node_modules
 package-lock.json
-.vscode
-.github
-firebase.json
-.firebaserc
-.env
-.vercel
-.vercel

@@ -4,7 +4,8 @@ class Database {
         this.end = end
     }
     async loadUsers() {
-        const users = await fetch(`https://user-the-api.vercel.app?start=${this.start}&end=${this.end}`).then(res => res.json())
+        const apiURL = window.location.origin + '/api'
+        const users = await fetch(apiURL + `?start=${this.start}&end=${this.end}`).then(res => res.json())
         const user_section = document.querySelector('.user_section')
         users.forEach((user) => {
             const temp = document.getElementsByTagName('template')[0];
